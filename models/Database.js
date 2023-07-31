@@ -4,9 +4,9 @@ class Database {
     static connect() {
         const connection = mysql.createConnection({
             host: "localhost",
-            user: "",
+            user: "root",
             password: "",
-            database: "",
+            database: "todo-list",
         });
 
         connection.connect((err) => {

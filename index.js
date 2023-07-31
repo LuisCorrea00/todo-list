@@ -1,4 +1,5 @@
 const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
 
 const tarefaController = require("./controllers/tarefaController");
 
@@ -6,6 +7,10 @@ const app = express();
 const port = 3000;
 
 app.set("view engine", "ejs");
+app.use(express.static("public"));
+
+app.use(expressLayouts);
+app.set('layout','./layouts/default/index');
 
 app.use(express.urlencoded({ extended: true }));
 
